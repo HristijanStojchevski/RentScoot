@@ -2,7 +2,9 @@ import React from 'react';
 
 function Rent() {
   return (
-      <div></div>
+      <div>
+          <h1>Rent</h1>
+      </div>
   );
 }
 
