@@ -1,7 +1,7 @@
 .header-background
 {
 	background: linear-gradient(90deg,rgba(0,0,0,0.75),rgba(255,0,0,0.2)),
-	url('../../Assets/images/image5.jpg');
+	url('../../Assets/Images/image5.jpg');
 	background-position: bottom;
 	background-repeat: none;
 	background-size: cover;
@@ -21,13 +21,6 @@
 	vertical-align: middle;
 	line-height: 220px;
 	margin: 0;
-}
-
-.about-us-grid
-{
-	/*padding: 10px;
-	border-radius: 10px;
-	box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.6);*/
 }
 .description-heading
 {   

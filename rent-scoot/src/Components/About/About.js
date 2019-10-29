@@ -1,9 +1,8 @@
 import React from 'react';
 import './About.css';
 import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import image2 from '../../Assets/images/image5.jpg'; // with import
+import image5 from '../../Assets/Images/image5.jpg'; // with import
 
  
 
@@ -33,7 +32,7 @@ function About() {
 					<div class="btn from-middle">Резервирај сега! &#x21fe;</div>
 		        </Grid>
 		        <Grid item xs={6}>
-		        	<img src={image2} className='about-images' />
+					<img src={image5} className='about-images' alt=""/>
 		        </Grid>
 		    </Grid>
 		</Box>
