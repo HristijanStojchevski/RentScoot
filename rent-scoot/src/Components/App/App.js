@@ -1,17 +1,17 @@
 import React from 'react';
 import './App.css';
 import Home from '../Home/Home';
-import Nav from '../Navbar/Navbar';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Rent from '../Rent/Rent';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
+import AppAppBar from '../modules/views/AppAppBar';
 function App() {
   return (
     <Router>
     <div className="App">
-      <Nav className='nav-style' />
+      <AppAppBar />
       <Switch>
         <Route path="/" exact component={Home}/>
         <Route path="/About" component={About} />
