@@ -6,12 +6,12 @@ import Contact from '../Contact/Contact';
 import Rent from '../Rent/Rent';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import AppAppBar from '../modules/views/AppAppBar';
+import Navbar from '../Navbar/Navbar';
 function App() {
   return (
     <Router>
     <div className="App">
-      <AppAppBar />
+      <Navbar />
       <Switch>
         <Route path="/" exact component={Home}/>
         <Route path="/About" component={About} />
