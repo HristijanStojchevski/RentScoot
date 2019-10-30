@@ -1,15 +1,26 @@
 import React,{useState} from 'react';
-import ReactMap,{Marker} from 'react-map-gl';
+import ReactMap,{Marker,Popup} from 'react-map-gl';
 import * as PointData from '../../Data/vehicle-locations.json';
+import {Button} from '@material-ui/core';
+import LocImg from '../../Assets/images/scooter-svgrepo-com (1).svg';
+
+   
 export default function Map(){
     const[viewport, setViewport] = useState({
         latitude: 41.994010,
         longitude: 21.435920,
-        width: '50vw',
-        height: '50vh',
+        width: '46.3vw',
+        height: '55vh',
         zoom: 10
     });
-    return <div>
+    const styles = {
+       borderRadius: "3px"
+    };
+
+    const[selectedPlace, setSelectedPlace] = useState(null);
+
+    
+    return (<div>
         <ReactMap {...viewport}
          mapboxApiAccessToken="pk.eyJ1IjoiaHJpc3RpamFuc3JtIiwiYSI6ImNrMmNmdGhnejA0aXgzYm8wbXlzcGdjcXcifQ.u48U8MvhK5IPyoiyci6jXw"
          mapStyle = "mapbox://styles/hristijansrm/ck2cwqhel0fta1co4nkwkadlz"
@@ -18,9 +29,30 @@ export default function Map(){
              {PointData.features.map((point)=>(
                  <Marker key={point.properties.Loc_ID}
                     latitude={point.properties.Coordinates[0]}  longitude={point.properties.Coordinates[1]}>
-                     <div> Scoot</div>
+                     <Button size="small" style={styles} 
+                        onClick = {e => {
+                         e.preventDefault();
+                         setSelectedPlace(point);
+                     }}>
+                     <img src={LocImg} style={{width:"3.2em",height:"3.2em"}} alt="Rental locations"></img>
+                     </Button>
                  </Marker>
              ))}
+
+             {selectedPlace ? (
+                <Popup latitude={selectedPlace.properties.PopupCoordinates[0]} 
+                       longitude={selectedPlace.properties.PopupCoordinates[1]}
+                       onClose= {()=>{
+                           setSelectedPlace(null);
+                       }}
+                       >
+                    <div>
+                        <h2>{selectedPlace.properties.Name}</h2>
+                        <p>{selectedPlace.properties.Description}</p>
+                    </div>
+                </Popup>
+             ) : null}
          </ReactMap>
     </div>
+    );
 }
