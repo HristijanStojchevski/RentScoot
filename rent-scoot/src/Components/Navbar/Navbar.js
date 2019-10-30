@@ -2,8 +2,8 @@ import React from 'react';
 import {Paper,Tabs} from '@material-ui/core';
 import Tab from '@material-ui/core/Tab';  
 import Link from 'react-router-dom/Link';
-import './Navbar.css'
 
+//import './Navbar.css';
 function Navbar () {
 
     const [value, setValue] = React.useState(0);
@@ -14,7 +14,7 @@ const changeTabs= (event, newValue) => {
 
     return (
     <Paper>
-    <Tabs
+    <Tabs 
     value={value}
     onChange = { changeTabs }
     indicatorColor="primary"

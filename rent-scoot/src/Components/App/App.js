@@ -13,13 +13,17 @@ function App() {
     <Router>
     <div className="App">
       <Navbar />
+      <div className="Content">
       <Switch>
         <Route path="/" exact component={Home}/>
         <Route path="/About" component={About} />
         <Route path="/Rent" component={Rent} />
         <Route path="/Contact" component={Contact} />
       </Switch>
+      </div>
+
       <Footer />
+
     </div>
     </Router>
   );
