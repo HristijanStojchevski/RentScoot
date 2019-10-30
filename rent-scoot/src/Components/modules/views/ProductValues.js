@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
+import './css/ProductValues.css'
 
 const styles = theme => ({
   root: {
@@ -12,8 +13,8 @@ const styles = theme => ({
     backgroundColor: theme.palette.secondary.light,
   },
   container: {
-    marginTop: theme.spacing(15),
-    marginBottom: theme.spacing(30),
+    marginTop: theme.spacing(5),
+    marginBottom: theme.spacing(3),
     display: 'flex',
     position: 'relative',
   },
@@ -51,49 +52,39 @@ function ProductValues(props) {
         <Grid container spacing={5}>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <img
-                className={classes.image}
-                src="/static/themes/onepirate/productValues1.svg"
-                alt="suitcase"
-              />
+              <i class="fas fa-calendar-alt"></i>
               <Typography variant="h6" className={classes.title}>
-                The best luxury hotels
+                Чекор 1: Резервирај
               </Typography>
               <Typography variant="h5">
-                {'From the latest trendy boutique hotel to the iconic palace with XXL pool'}
-                {', go for a mini-vacation just a few subway stops away from your home.'}
+                {`Изнајмете електричен скутер преку нашиот формулар за резервација. 
+                  По приемот на вашето барање за резервација, 
+                  ние ќе ве контактираме за да ја потврдиме вашата резервација.`}
               </Typography>
             </div>
           </Grid>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <img
-                className={classes.image}
-                src="/static/themes/onepirate/productValues2.svg"
-                alt="graph"
-              />
+            <i class="fas fa-location-arrow"></i>
               <Typography variant="h6" className={classes.title}>
-                New experiences
+                Чекор 2: Подигни
               </Typography>
               <Typography variant="h5">
-                {'Privatize a pool, take a Japanese bath or wake up in 900m2 of garden… '}
-                {'your Sundays will not be alike.'}
+                {`Подигнете го вашиот тротинет.Ние ќе ја скенираме вашата лична карта или Пасош, 
+                  ќе ви наложиме како да користите Електричен скутер, 
+                  како и да ја извршиме исплатата и да организираме локација и време на враќање.`}
               </Typography>
             </div>
           </Grid>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <img
-                className={classes.image}
-                src="/static/themes/onepirate/productValues3.svg"
-                alt="clock"
-              />
+            <i class="fas fa-exchange-alt"></i>
               <Typography variant="h6" className={classes.title}>
-                Exclusive rates
+                Чекор 3:Користење и враќање
               </Typography>
               <Typography variant="h5">
-                {'By registering, you will access specially negotiated rates '}
-                {'that you will not find anywhere else.'}
+                {`На крајот на времето за возење, ќе го вратите изнајмениот 
+                  Електричен скутер на договорената локација за враќање`}
               </Typography>
             </div>
           </Grid>

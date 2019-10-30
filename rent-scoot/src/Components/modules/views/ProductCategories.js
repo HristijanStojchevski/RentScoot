@@ -89,64 +89,46 @@ function ProductCategories(props) {
   const images = [
     {
       url:
-        'https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=400&q=80',
-      title: 'Snorkeling',
+        'https://cdn.shopify.com/s/files/1/0063/2714/0425/products/left-side-folded-v2_750x.progressive.jpg?v=1572005937',
+      title: 'Xiaomi M365',
       width: '40%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400&q=80',
-      title: 'Massage',
+        'https://cdn.shopify.com/s/files/1/0063/2714/0425/products/ES2_New_1_750x.progressive.jpg?v=1571148517',
+      title: 'Ninebot Segway ES2',
       width: '20%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80',
-      title: 'Hiking',
+        'https://cdn.shopify.com/s/files/1/0063/2714/0425/products/INOKIM-OX-black-07_750x.progressive.jpg?v=1561371077',
+      title: 'Inokim - Ox',
       width: '40%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1453747063559-36695c8771bd?auto=format&fit=crop&w=400&q=80',
-      title: 'Tour',
+        'https://cdn.shopify.com/s/files/1/0063/2714/0425/products/0Z7A8100_750x.png?v=1559249238',
+      title: 'Egret - Ten',
       width: '38%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1523309996740-d5315f9cc28b?auto=format&fit=crop&w=400&q=80',
-      title: 'Gastronomy',
+        'https://www.razor.com/wp-content/uploads/2019/09/PowerA5_BlackLabel_Product-431x637.png',
+      title: 'Black Label Power A5',
       width: '38%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=400&q=80',
-      title: 'Shopping',
+        'https://www.razor.com/wp-content/uploads/2018/05/EPrime_Product-478x637.png',
+      title: 'E Prime',
       width: '24%',
-    },
-    {
-      url:
-        'https://images.unsplash.com/photo-1506941433945-99a2aa4bd50a?auto=format&fit=crop&w=400&q=80',
-      title: 'Walking',
-      width: '40%',
-    },
-    {
-      url:
-        'https://images.unsplash.com/photo-1533727937480-da3a97967e95?auto=format&fit=crop&w=400&q=80',
-      title: 'Fitness',
-      width: '20%',
-    },
-    {
-      url:
-        'https://images.unsplash.com/photo-1518136247453-74e7b5265980?auto=format&fit=crop&w=400&q=80',
-      title: 'Reading',
-      width: '40%',
     },
   ];
 
   return (
     <Container className={classes.root} component="section">
       <Typography variant="h4" marked="center" align="center" component="h2">
-        For all tastes and all desires
+        Галерија
       </Typography>
       <div className={classes.images}>
         {images.map(image => (
