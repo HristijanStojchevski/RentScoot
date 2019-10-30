@@ -1,0 +1,44 @@
+{
+    "features":[
+        {
+            "type":"Location",
+            "properties":{
+                "Loc_ID":0,
+                "Name":"Железничка",
+                "Address":"",
+                "Description":"Кај таксистите",
+                "Coordinates":[41.991171,21.445332]
+            }
+        },
+        {
+            "type":"Location",
+            "properties":{
+                "Loc_ID":1,
+                "Name":"City Mall",
+                "Address":"",
+                "Description":"Пред Play Cafe",
+                "Coordinates":[42.004028,21.392592]
+            }
+        },
+        {
+            "type":"Location",
+            "properties":{
+                "Loc_ID":2,
+                "Name":"Градски плоштад",
+                "Address":"",
+                "Description":"Кај Александар",
+                "Coordinates":[41.995907,21.431262]
+            }
+        },
+        {
+            "type":"Location",
+            "properties":{
+                "Loc_ID":3,
+                "Name":"Capitol Mall",
+                "Address":"",
+                "Description":"Пред Deja Vu",
+                "Coordinates":[41.985838,21.466229]
+            }
+        }
+    ]
+}
