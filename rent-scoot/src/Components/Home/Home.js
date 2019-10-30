@@ -7,6 +7,7 @@ import ProductHero from '../modules/views/ProductHero';
 import ProductValues from '../modules/views/ProductValues';
 import ProductHowItWorks from '../modules/views/ProductHowItWorks';
 import ProductCTA from '../modules/views/ProductCTA';
+
 function Home(){
     return(
         <React.Fragment>
@@ -16,7 +17,6 @@ function Home(){
           <ProductHowItWorks />
           <ProductCTA />
           <ProductSmokingHero />
-          <AppFooter />
         </React.Fragment>
     );
 }

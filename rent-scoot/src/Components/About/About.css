@@ -1,7 +1,7 @@
 .header-background
 {
 	background: linear-gradient(90deg,rgba(0,0,0,0.75),rgba(255,0,0,0.2)),
-	url('../../Assets/Images/image5.jpg');
+	url('../../Assets/images/image5.jpg');
 	background-position: bottom;
 	background-repeat: none;
 	background-size: cover;
@@ -50,7 +50,7 @@
 .btn {	
 	text-align: left;
 	padding: 8px 7px 8px 1px;
-	width: 22%;	
+	width: 25%;	
 	position: relative;	
 	color: rgba(255, 0, 0, 0.75);
 	text-transform: uppercase;
@@ -67,7 +67,6 @@
 }
 
 .btn:hover {
-	border-radius: 15px;
 	color: var(--def);
 	transition-delay: .6s;
 }
@@ -89,11 +88,9 @@
 	border: 1px solid var(--inv);
 	border-left: 0;
 	border-right: 0;
-	border-radius: 15px;
 }
 
 .from-middle:after {
-	border-radius: 15px;
 	bottom: 0;
 	left: 0;
 	height: 0;
@@ -102,13 +99,11 @@
 }
 
 .from-middle:hover:before {
-	border-radius: 15px;
 	left: 0;
 	width: 100%;
 }
 
 .from-middle:hover:after {
-	border-radius: 15px;
 	top: 0;
 	height: 100%;
 }
@@ -118,8 +113,9 @@
 
 .about-images
 {
+	height: 350px;
 	filter: brightness(.6);
-	width: 80%;
+	width: 90%;
 	float: right;
 }
 .about-images:hover
@@ -144,6 +140,12 @@
   		flex-basis: 100% !important;
  
   	}
+  	.MuiGrid-grid-xs-4
+  	{
+  		padding: 1em 0;
+  		max-width: 100%  !important;
+  		flex-basis: 100% !important;
+ 	}
   	.about-images
   	{
   		margin: auto;

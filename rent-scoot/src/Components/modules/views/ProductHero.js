@@ -4,9 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '../components/Button';
 import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
+import backgroundImage from '../../../Assets/images/homebg.jpg'
 
-const backgroundImage =
-  'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400&q=80';
 
 const styles = theme => ({
   background: {
@@ -37,7 +36,7 @@ function ProductHero(props) {
       {/* Increase the network loading priority of the background image. */}
       <img style={{ display: 'none' }} src={backgroundImage} alt="increase priority" />
       <Typography color="inherit" align="center" variant="h2" marked="center">
-        Upgrade your Sundays
+        Бидете одговорни, Возете еко возила
       </Typography>
       <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
         Enjoy secret offers up to -70% off the best luxury hotels every Sunday.
@@ -50,11 +49,8 @@ function ProductHero(props) {
         component="a"
         href="/premium-themes/onepirate/sign-up/"
       >
-        Register
+        Изнајми
       </Button>
-      <Typography variant="body2" color="inherit" className={classes.more}>
-        Discover the experience
-      </Typography>
     </ProductHeroLayout>
   );
 }
