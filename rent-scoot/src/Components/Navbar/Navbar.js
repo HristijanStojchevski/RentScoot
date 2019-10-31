@@ -10,7 +10,6 @@ function Navbar () {
 
 const changeTabs= (event, newValue) => {
     setValue(newValue);
-    console.log(newValue);
 };
 
     return (
