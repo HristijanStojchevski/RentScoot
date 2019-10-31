@@ -27,9 +27,9 @@ export default function Map(){
          onViewportChange ={(viewport)=>{setViewport(viewport);}}
          >
          <div className='map-insturctions'>
-            <h5>Начин на користење на мапата</h5>
+            <h3>Начин на користење на мапата</h3>
             <p>
-                Притиснете на иконата за да ја видите локацијата на подигнување 
+                Притиснете на иконата за да ги видите локациите на подигнување 
                 на вашиот тротинет.
             </p>
          </div>

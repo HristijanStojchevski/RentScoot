@@ -43,57 +43,56 @@ function Rent() {
             <Grid item sm={10}>
               <Paper className='reservation-form'>
                 <h2 className='legend'>РЕЗЕРВИРАЈ СЕГА!</h2>
-              <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Grid container justify="space-around">
-        <KeyboardDatePicker
-          disableToolbar
-          variant="inline"
-          format="MM/dd/yyyy"
-          margin="normal"
-          id="date-picker-inline"
-          label="Датум на подигнување"
-          value={selectedStartDate}
-          onChange={handleDateStartChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change date',
-          }}
-        />
-        <KeyboardTimePicker
-          margin="normal"
-          id="time-picker"
-          label="Време на подигнување"
-          value={selectedStartDate}
-          onChange={handleDateStartChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change time',
-          }}
-        />
-        <KeyboardDatePicker
-          margin="normal"
-          id="date-picker-dialog"
-          label="Датум на враќање"
-          format="MM/dd/yyyy"
-          value={selectedEndDate}
-          onChange={handleDateEndChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change date',
-          }}
-        />
-        <KeyboardTimePicker
-          margin="normal"
-          id="time-picker"
-          label="Време на враќање"
-          value={selectedEndDate}
-          onChange={handleDateEndChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change time',
-          }}
-        />
-      </Grid>
-    </MuiPickersUtilsProvider>
-            <FormFields dateStart={selectedStartDate} dateEnd={selectedEndDate}/>
+                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                  <Grid container justify="space-around">
+                    <KeyboardDatePicker
+                      disableToolbar
+                      variant="inline"
+                      format="MM/dd/yyyy"
+                      margin="normal"
+                      id="date-picker-inline"
+                      label="Датум на подигнување"
+                      value={selectedStartDate}
+                      onChange={handleDateStartChange}
+                      KeyboardButtonProps={{
+                        'aria-label': 'change date',
+                      }}
+                    />
+                    <KeyboardTimePicker
+                      margin="normal"
+                      id="time-picker"
+                      label="Време на подигнување"
+                      value={selectedStartDate}
+                      onChange={handleDateStartChange}
+                      KeyboardButtonProps={{
+                        'aria-label': 'change time',
+                      }}
+                    />
+                    <KeyboardDatePicker
+                      margin="normal"
+                      id="date-picker-dialog"
+                      label="Датум на враќање"
+                      format="MM/dd/yyyy"
+                      value={selectedEndDate}
+                      onChange={handleDateEndChange}
+                      KeyboardButtonProps={{
+                        'aria-label': 'change date',
+                      }}
+                    />
+                    <KeyboardTimePicker
+                      margin="normal"
+                      id="time-picker"
+                      label="Време на враќање"
+                      value={selectedEndDate}
+                      onChange={handleDateEndChange}
+                      KeyboardButtonProps={{
+                        'aria-label': 'change time',
+                      }}
+                    />
+                  </Grid>
+                </MuiPickersUtilsProvider>
+                <FormFields dateStart={selectedStartDate} dateEnd={selectedEndDate}/>
               </Paper>
-
             </Grid>
           </Grid>
         </Grid>

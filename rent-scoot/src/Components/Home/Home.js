@@ -13,6 +13,7 @@ function Home(){
           <ProductHero />
           <ProductValues />
           <ProductCategories />
+          <ProductHowItWorks />
           <ProductCTA />
         </React.Fragment>
     );
