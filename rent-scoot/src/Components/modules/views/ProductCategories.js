@@ -4,6 +4,12 @@ import { withStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
+import image7 from '../../../Assets/images/image7.jpg';
+import image8 from '../../../Assets/images/image8.jpg';
+import image9 from '../../../Assets/images/image9.jpg';
+import image10 from '../../../Assets/images/image10.jpg';
+import image11 from '../../../Assets/images/image11.jpg';
+import image12 from '../../../Assets/images/image12.jpg';
 
 const styles = theme => ({
   root: {
@@ -94,14 +100,12 @@ function ProductCategories(props) {
       width: '40%',
     },
     {
-      url:
-        'https://cdn.shopify.com/s/files/1/0063/2714/0425/products/ES2_New_1_750x.progressive.jpg?v=1571148517',
+      url: 'https://cdn.shopify.com/s/files/1/0063/2714/0425/products/ES2_New_1_750x.progressive.jpg?v=1571148517',
       title: 'Ninebot Segway ES2',
       width: '20%',
     },
     {
-      url:
-        'https://cdn.shopify.com/s/files/1/0063/2714/0425/products/INOKIM-OX-black-07_750x.progressive.jpg?v=1561371077',
+      url:image7,
       title: 'Inokim - Ox',
       width: '40%',
     },
@@ -112,16 +116,29 @@ function ProductCategories(props) {
       width: '38%',
     },
     {
-      url:
-        'https://www.razor.com/wp-content/uploads/2019/09/PowerA5_BlackLabel_Product-431x637.png',
-      title: 'Black Label Power A5',
+      url:image8,
+      title: '',
       width: '38%',
     },
     {
-      url:
-        'https://www.razor.com/wp-content/uploads/2018/05/EPrime_Product-478x637.png',
+      url: image9,
       title: 'E Prime',
       width: '24%',
+    },
+    {
+      url: image10,
+      title: 'Macwheel',
+      width: '40%',
+    },
+    {
+      url: image11,
+      title: '',
+      width: '20%',
+    },
+        {
+      url: image12,
+      title: 'Black Label Power A5',
+      width: '40%',
     },
   ];
 

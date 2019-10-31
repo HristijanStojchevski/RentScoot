@@ -1,6 +1,8 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import './Form.css'
+
 
 const RentSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -38,30 +40,22 @@ export default function FormFields(props){
       }}
     >
       {({ errors, touched }) => (
-        <Form>
-          <Field name="firstName" placeholder="Име" />
+        <Form className='reservation-form'>
+          <Field className='form-field' name="firstName" placeholder="Име" />
           {errors.firstName && touched.firstName ? (
-            <div>{errors.firstName}</div>
+            <span className='validator'>{errors.firstName}</span>
           ) : null}
-          <Field name="lastName" placeholder="Презиме"/>
+          <Field className='form-field' name="lastName" placeholder="Презиме"/>
           {errors.lastName && touched.lastName ? (
-            <div>{errors.lastName}</div>
+            <span className='validator'>{errors.lastName}</span>
           ) : null}
-          <Field name="email" type="email" placeholder="Електронска пошта"/>
-          {errors.email && touched.email ? <div>{errors.email}</div> : null}
-          <Field name="phone" type="number" placeholder="Телефон"/>
+          <Field className='form-field' name="email" type="email" placeholder="Електронска пошта"/>
+          {errors.email && touched.email ? <span className='validator'>{errors.email}</span> : null}
+          <Field className='form-field' name="phone" type="number" placeholder="Телефон"/>
           {errors.phone && touched.phone ? (
-            <div>{errors.phone}</div>
+            <span className='validator'>{errors.phone}</span>
           ) : null}
-          <Field name="dateStart" value={{dateStart}} placeholder="Изнајми од" disabled/>
-          {errors.firstName && touched.firstName ? (
-            <div>{errors.firstName}</div>
-          ) : null}
-          <Field name="dateEnd" value={{dateEnd}}placeholder="Изнајми до" disabled/>
-          {errors.firstName && touched.firstName ? (
-            <div>{errors.firstName}</div>
-          ) : null}
-          <button type="submit">Submit</button>
+          <button type="submit" className='submit-button'>Поднеси</button>
         </Form>
       )}
     </Formik>

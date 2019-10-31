@@ -12,6 +12,7 @@ import {
 } from '@material-ui/pickers';
 import FormFields from './Form';
 
+
 function Rent() {
   const style = {
     Paper: { padding: 20, margintTop: 10, marginBottom: 10 }
@@ -60,7 +61,8 @@ function Rent() {
         <Grid item>
           <Grid container className="forma">
             <Grid item sm={10}>
-              <Paper>
+              <Paper className='reservation-form'>
+                <h2 className='legend'>РЕЗЕРВИРАЈ СЕГА!</h2>
               <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <Grid container justify="space-around">
         <KeyboardDatePicker
@@ -69,7 +71,7 @@ function Rent() {
           format="MM/dd/yyyy"
           margin="normal"
           id="date-picker-inline"
-          label="Date picker inline"
+          label="Датум на подигнување"
           value={selectedStartDate}
           onChange={handleDateStartChange}
           KeyboardButtonProps={{
@@ -79,7 +81,7 @@ function Rent() {
         <KeyboardTimePicker
           margin="normal"
           id="time-picker"
-          label="Time picker"
+          label="Време на подигнување"
           value={selectedStartDate}
           onChange={handleDateStartChange}
           KeyboardButtonProps={{
@@ -89,7 +91,7 @@ function Rent() {
         <KeyboardDatePicker
           margin="normal"
           id="date-picker-dialog"
-          label="Date picker dialog"
+          label="Датум на враќање"
           format="MM/dd/yyyy"
           value={selectedEndDate}
           onChange={handleDateEndChange}
@@ -100,7 +102,7 @@ function Rent() {
         <KeyboardTimePicker
           margin="normal"
           id="time-picker"
-          label="Time picker"
+          label="Време на враќање"
           value={selectedEndDate}
           onChange={handleDateEndChange}
           KeyboardButtonProps={{
