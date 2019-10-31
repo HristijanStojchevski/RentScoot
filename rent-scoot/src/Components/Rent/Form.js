@@ -19,8 +19,8 @@ const RentSchema = Yup.object().shape({
     .required('Задолжително!')
 });
 export default function FormFields(props){
-    const dateStart = props.dateStart;
-    const dateEnd = props.dateEnd
+    const dateStart = props.dateStart.toString();
+    const dateEnd = props.dateEnd.toString();
     return (
         <Formik
       initialValues={{
