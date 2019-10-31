@@ -30,7 +30,6 @@ const styles = theme => ({
 
 function ProductHero(props) {
   const { classes } = props;
-
   return (
     <ProductHeroLayout backgroundClassName={classes.background}>
       {/* Increase the network loading priority of the background image. */}
@@ -46,6 +45,9 @@ function ProductHero(props) {
         variant="contained"
         size="large"
         className={classes.button}
+        onClick={ e => {
+          props.handleNav(1)
+        }}
         component={Link}
         to="/Rent"
       >
