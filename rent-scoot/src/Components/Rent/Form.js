@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import emailjs from 'emailjs-com'
 
 const RentSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -20,7 +21,7 @@ const RentSchema = Yup.object().shape({
 });
 export default function FormFields(props){
     const dateStart = props.dateStart;
-    const dateEnd = props.dateEnd
+    const dateEnd = props.dateEnd;
     return (
         <Formik
       initialValues={{
@@ -28,13 +29,30 @@ export default function FormFields(props){
         lastName: '',
         email: '',
         phone: '',
-        dateStart: dateStart,
-        dateEnd: dateEnd
+        dateStart: '',
+        dateEnd: '',
+        hourStart: '',
+        hourEnd: '',
+        location: ''
       }}
       validationSchema={RentSchema}
       onSubmit={values => {
         // same shape as initial values
+        values.dateStart = dateStart.toString().substring(0,10);
+        values.dateEnd = dateEnd.toString().substring(0,10);
+        values.hourStart = dateStart.toString().substring(11,16);
+        values.hourEnd = dateEnd.toString().substring(11,16);
         console.log(values);
+        const templateId = 'digit2019';
+        emailjs.init("user_MOSCUCzUTNRwgqfcKKeJb");
+        emailjs.send(
+          'gmail', templateId,
+          values
+          ).then(res => {
+            console.log('Email successfully sent!')
+          })
+          // Handle errors here however you like, or use a React error boundary
+          .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
       }}
     >
       {({ errors, touched }) => (
@@ -52,14 +70,6 @@ export default function FormFields(props){
           <Field name="phone" type="number" placeholder="Телефон"/>
           {errors.phone && touched.phone ? (
             <div>{errors.phone}</div>
-          ) : null}
-          <Field name="dateStart" value={{dateStart}} placeholder="Изнајми од" disabled/>
-          {errors.firstName && touched.firstName ? (
-            <div>{errors.firstName}</div>
-          ) : null}
-          <Field name="dateEnd" value={{dateEnd}}placeholder="Изнајми до" disabled/>
-          {errors.firstName && touched.firstName ? (
-            <div>{errors.firstName}</div>
           ) : null}
           <button type="submit">Submit</button>
         </Form>
