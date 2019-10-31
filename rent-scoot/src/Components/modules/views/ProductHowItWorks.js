@@ -5,6 +5,8 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Button from '../components/Button';
 import Typography from '../components/Typography';
+import Link from 'react-router-dom/Link';
+
 
 const styles = theme => ({
   root: {
@@ -36,7 +38,7 @@ const styles = theme => ({
     fontWeight: theme.typography.fontWeightMedium,
   },
   image: {
-    height: 55,
+    height: 155,
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(4),
   },
@@ -63,47 +65,76 @@ function ProductHowItWorks(props) {
           alt="curvy lines"
         />
         <Typography variant="h4" marked="center" className={classes.title} component="h2">
-          How it works
+          Некои од нашите тротинети
         </Typography>
         <div>
           <Grid container spacing={5}>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                <div className={classes.number}>1.</div>
                 <img
-                  src="/static/themes/onepirate/productHowItWorks1.svg"
+                  src=""
                   alt="suitcase"
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  Appointment every Wednesday 9am.
+                  <p>Xiaomi M365</p>
+                  <ul>
+                    <li>
+                      Максимална брзина:25км/ч
+                    </li>
+                    <li>
+                      Растојание со полна батерија: 30 км
+                    </li>
+                    <li>
+                      Максимална дозволена носивост: 100 кг
+                    </li>
+                  </ul>
                 </Typography>
               </div>
             </Grid>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                <div className={classes.number}>2.</div>
                 <img
                   src="/static/themes/onepirate/productHowItWorks2.svg"
                   alt="graph"
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  First come, first served. Our offers are in limited quantities, so be quick.
+                  <p>Power Core E100</p>
+                  <ul>
+                    <li>
+                      Максимална брзина:18км/ч
+                    </li>
+                    <li>
+                      Растојание со полна батерија: 16 км
+                    </li>
+                    <li>
+                      Максимална дозволена носивост: 54 кг
+                    </li>
+                  </ul>                
                 </Typography>
               </div>
             </Grid>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                <div className={classes.number}>3.</div>
                 <img
                   src="/static/themes/onepirate/productHowItWorks3.svg"
                   alt="clock"
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  {'New offers every week. New experiences, new surprises. '}
-                  {'Your Sundays will no longer be alike.'}
+                  <p>Power Core E300</p>
+                  <ul>
+                    <li>
+                      Максимална брзина:25км/ч
+                    </li>
+                    <li>
+                      Растојание со полна батерија: 18 км
+                    </li>
+                    <li>
+                      Максимална дозволена носивост: 100 кг
+                    </li>
+                  </ul>
                 </Typography>
               </div>
             </Grid>
@@ -114,10 +145,9 @@ function ProductHowItWorks(props) {
           size="large"
           variant="contained"
           className={classes.button}
-          component="a"
-          href="/premium-themes/onepirate/sign-up/"
+          component={Link} to="/Rent"
         >
-          Get started
+          Резервирај сега!
         </Button>
       </Container>
     </section>

@@ -97,7 +97,6 @@ function Rent() {
     </MuiPickersUtilsProvider>
             <FormFields dateStart={selectedStartDate} dateEnd={selectedEndDate} location={selectedPlace}/>
               </Paper>
-
             </Grid>
           </Grid>
         </Grid>

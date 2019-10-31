@@ -3,8 +3,8 @@ import './About.css';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Image5 from '../../Assets/images/image5.jpg'; // with import
+import Link from 'react-router-dom/Link';
 
- 
 
 function About() {
   return (
@@ -40,7 +40,6 @@ function About() {
 				    Има два режима на возење, нормален – бела светилка; штедлив – зелена светилка. 
 				    Штедливиот режим дозволува максимална брзина од 18 км/ч и поблаго забрзување за почетници.
 					</p>
-					<div class="btn from-middle">Резервирај сега! &#x21fe;</div>
 		        </Grid>
 		        <Grid item xs={6}>
 					<img src={Image5} className='about-images' alt=""/>
