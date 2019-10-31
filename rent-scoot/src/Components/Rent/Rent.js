@@ -10,32 +10,21 @@ import {
   KeyboardTimePicker,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
-import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
-
-const RentSchema = Yup.object().shape({
-  firstName: Yup.string()
-    .max(50, 'Премногу долго!')
-    .required('Задолжително!'),
-  lastName: Yup.string()
-    .min(2, 'Премногу кратко!')
-    .max(50, 'Премногу долго!')
-    .required('Задолжително!'),
-  email: Yup.string()
-    .email('Невалиден формат!')
-    .required('Задолжително!'),
-  phone: Yup.string()
-    .required('Задолжително!')
-});
+import FormFields from './Form';
 
 function Rent() {
   const style = {
     Paper: { padding: 20, margintTop: 10, marginBottom: 10 }
   }
-  const [selectedDate, setSelectedDate] = useState(new Date().toISOString());
+  const [selectedStartDate, setSelectedStartDate] = useState(new Date().toISOString());
   
-  const handleDateChange = date=> {
-    setSelectedDate(date);
+  const handleDateStartChange = date=> {
+    setSelectedStartDate(date);
+  };
+  const [selectedEndDate, setSelectedEndDate] = useState(new Date().toISOString());
+  
+  const handleDateEndChange = date=> {
+    setSelectedEndDate(date);
   };
 
   return (
@@ -81,8 +70,8 @@ function Rent() {
           margin="normal"
           id="date-picker-inline"
           label="Date picker inline"
-          value={selectedDate}
-          onChange={handleDateChange}
+          value={selectedStartDate}
+          onChange={handleDateStartChange}
           KeyboardButtonProps={{
             'aria-label': 'change date',
           }}
@@ -91,8 +80,8 @@ function Rent() {
           margin="normal"
           id="time-picker"
           label="Time picker"
-          value={selectedDate}
-          onChange={handleDateChange}
+          value={selectedStartDate}
+          onChange={handleDateStartChange}
           KeyboardButtonProps={{
             'aria-label': 'change time',
           }}
@@ -102,8 +91,8 @@ function Rent() {
           id="date-picker-dialog"
           label="Date picker dialog"
           format="MM/dd/yyyy"
-          value={selectedDate}
-          onChange={handleDateChange}
+          value={selectedEndDate}
+          onChange={handleDateEndChange}
           KeyboardButtonProps={{
             'aria-label': 'change date',
           }}
@@ -112,56 +101,15 @@ function Rent() {
           margin="normal"
           id="time-picker"
           label="Time picker"
-          value={selectedDate}
-          onChange={handleDateChange}
+          value={selectedEndDate}
+          onChange={handleDateEndChange}
           KeyboardButtonProps={{
             'aria-label': 'change time',
           }}
         />
       </Grid>
-    </MuiPickersUtilsProvider><Formik
-      initialValues={{
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        dateStart: '',
-        dateEnd: ''
-      }}
-      validationSchema={RentSchema}
-      onSubmit={values => {
-        // same shape as initial values
-        console.log(values);
-      }}
-    >
-      {({ errors, touched }) => (
-        <Form>
-          <Field name="firstName" placeholder="Име" />
-          {errors.firstName && touched.firstName ? (
-            <div>{errors.firstName}</div>
-          ) : null}
-          <Field name="lastName" placeholder="Презиме"/>
-          {errors.lastName && touched.lastName ? (
-            <div>{errors.lastName}</div>
-          ) : null}
-          <Field name="email" type="email" placeholder="Електронска пошта"/>
-          {errors.email && touched.email ? <div>{errors.email}</div> : null}
-          <Field name="phone" placeholder="Телефон" className="nupEdit"/>
-          {errors.phone && touched.phone ? (
-            <div>{errors.phone}</div>
-          ) : null}
-          <Field name="dateStart" placeholder="Изнајми од"/>
-          {errors.firstName && touched.firstName ? (
-            <div>{errors.firstName}</div>
-          ) : null}
-          <Field name="dateEnd" placeholder="Изнајми до"/>
-          {errors.firstName && touched.firstName ? (
-            <div>{errors.firstName}</div>
-          ) : null}
-          <button type="submit">Submit</button>
-        </Form>
-      )}
-    </Formik>
+    </MuiPickersUtilsProvider>
+            <FormFields dateStart={selectedStartDate} dateEnd={selectedEndDate}/>
               </Paper>
 
             </Grid>
