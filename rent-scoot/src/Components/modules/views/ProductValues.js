@@ -52,39 +52,38 @@ function ProductValues(props) {
         <Grid container spacing={5}>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-              <i class="fas fa-calendar-alt"></i>
+              <i className="fas fa-calendar-alt"></i>
               <Typography variant="h6" className={classes.title}>
                 Чекор 1: Резервирај
               </Typography>
               <Typography variant="h5">
-                {`Изнајмете електричен скутер преку нашиот формулар за резервација. 
-                  По приемот на вашето барање за резервација, 
-                  ние ќе ве контактираме за да ја потврдиме вашата резервација.`}
+                {`Изнајмете електричен тротинет преку нашиот формулар за резервација. 
+                  По приемот на вашето барање за резервација, ќе Ве контактираме за да ја потврдиме истата.`}
               </Typography>
             </div>
           </Grid>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-            <i class="fas fa-location-arrow"></i>
+            <i className="fas fa-location-arrow"></i>
               <Typography variant="h6" className={classes.title}>
                 Чекор 2: Подигни
               </Typography>
               <Typography variant="h5">
-                {`Подигнете го вашиот тротинет.Ние ќе ја скенираме вашата лична карта или Пасош, 
-                  ќе ви наложиме како да користите Електричен скутер, 
-                  како и да ја извршиме исплатата и да организираме локација и време на враќање.`}
+                {`Подигнете го вашиот електричен тротинет. Ние ќе ја скенираме вашата лична карта или пасош, 
+                  ќе Ви наложиме како да го користите тротинетот, ќе ја извршиме исплатата, 
+                  ќе организираме локација и време на стартување и време на враќање.`}
               </Typography>
             </div>
           </Grid>
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
-            <i class="fas fa-exchange-alt"></i>
+            <i className="fas fa-exchange-alt"></i>
               <Typography variant="h6" className={classes.title}>
                 Чекор 3:Користење и враќање
               </Typography>
               <Typography variant="h5">
-                {`На крајот на времето за возење, ќе го вратите изнајмениот 
-                  Електричен скутер на договорената локација за враќање`}
+                {`На крајот на времето за возење, потребно е изнајмениот електричен 
+                  тротинет да се врати на една од постоечките локации за изнајмување.`}
               </Typography>
             </div>
           </Grid>

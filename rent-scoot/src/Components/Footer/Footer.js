@@ -13,24 +13,24 @@ function Footer() {
 	          	<img src={logo} />
 	        </Grid>		
 	        <Grid item xs={2} className='footer-item'>
-	          	<i class="fas fa-map-marker-alt"></i> 
+	          	<i className="fas fa-map-marker-alt"></i> 
 	          	Џон Кенеди 19а, Скопје 1000, Македонија
 	        </Grid>
 	        <Grid item xs={2} className='footer-item'>
-	          	<i class="fas fa-envelope"></i>
+	          	<i className="fas fa-envelope"></i>
 	          	info@rentscoot.com
 	        </Grid>
 	        <Grid item xs={2} className='footer-item'>
-	          	<i class="fas fa-phone"></i> 
+	          	<i className="fas fa-phone"></i> 
 	          	+389-075-500-000
 	        </Grid>
 	      </Grid>
 	    <Grid container>
 	    	<Grid item xs={12} className='footer-item-last'>
-	          	<i class="fab fa-facebook-f"></i>
-	          	<i class="fab fa-instagram"></i>
-	          	<i class="fab fa-twitter-square"></i>
-	          	<i class="fab fa-youtube"></i>
+	          	<i className="fab fa-facebook-f"></i>
+	          	<i className="fab fa-instagram"></i>
+	          	<i className="fab fa-twitter-square"></i>
+	          	<i className="fab fa-youtube"></i>
 	          	<p>Сите права задржани RentScoot ©2019</p>
 	        </Grid>
 	    </Grid>

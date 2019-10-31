@@ -14,9 +14,7 @@ function Home(){
           <ProductHero />
           <ProductValues />
           <ProductCategories />
-          <ProductHowItWorks />
           <ProductCTA />
-          <ProductSmokingHero />
         </React.Fragment>
     );
 }
