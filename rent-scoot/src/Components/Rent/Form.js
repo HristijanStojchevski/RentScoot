@@ -1,6 +1,8 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import emailjs from 'emailjs-com'
+import './Form.css'
 
 const RentSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -19,8 +21,9 @@ const RentSchema = Yup.object().shape({
     .required('Задолжително!')
 });
 export default function FormFields(props){
-    const dateStart = props.dateStart.toString();
-    const dateEnd = props.dateEnd.toString();
+    const dateStart = props.dateStart;
+    const dateEnd = props.dateEnd;
+    const location = props.location;
     return (
         <Formik
       initialValues={{
@@ -28,40 +31,50 @@ export default function FormFields(props){
         lastName: '',
         email: '',
         phone: '',
-        dateStart: dateStart,
-        dateEnd: dateEnd
+        dateStart: '',
+        dateEnd: '',
+        hourStart: '',
+        hourEnd: '',
+        location: ''
       }}
       validationSchema={RentSchema}
       onSubmit={values => {
         // same shape as initial values
+        values.dateStart = dateStart.toString().substring(0,10);
+        values.dateEnd = dateEnd.toString().substring(0,10);
+        values.hourStart = dateStart.toString().substring(11,16);
+        values.hourEnd = dateEnd.toString().substring(11,16);
+        values.location = location.properties.Name;
         console.log(values);
+        const templateId = 'digit2019';
+        emailjs.init("user_MOSCUCzUTNRwgqfcKKeJb");
+        emailjs.send(
+          'gmail', templateId,
+          values
+          ).then(res => {
+            console.log('Email successfully sent!')
+          })
+          // Handle errors here however you like, or use a React error boundary
+          .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
       }}
     >
       {({ errors, touched }) => (
-        <Form>
-          <Field name="firstName" placeholder="Име" />
+        <Form className='reservation-form'>
+          <Field className='form-field' name="firstName" placeholder="Име" />
           {errors.firstName && touched.firstName ? (
-            <div>{errors.firstName}</div>
+            <span className='validator'>{errors.firstName}</span>
           ) : null}
-          <Field name="lastName" placeholder="Презиме"/>
+          <Field className='form-field' name="lastName" placeholder="Презиме"/>
           {errors.lastName && touched.lastName ? (
-            <div>{errors.lastName}</div>
+            <span className='validator'>{errors.lastName}</span>
           ) : null}
-          <Field name="email" type="email" placeholder="Електронска пошта"/>
-          {errors.email && touched.email ? <div>{errors.email}</div> : null}
-          <Field name="phone" type="number" placeholder="Телефон"/>
+          <Field className='form-field' name="email" type="email" placeholder="Електронска пошта"/>
+          {errors.email && touched.email ? <span className='validator'>{errors.email}</span> : null}
+          <Field className='form-field' name="phone" type="number" placeholder="Телефон"/>
           {errors.phone && touched.phone ? (
-            <div>{errors.phone}</div>
+            <span className='validator'>{errors.phone}</span>
           ) : null}
-          <Field name="dateStart" value={{dateStart}} placeholder="Изнајми од" disabled/>
-          {errors.firstName && touched.firstName ? (
-            <div>{errors.firstName}</div>
-          ) : null}
-          <Field name="dateEnd" value={{dateEnd}}placeholder="Изнајми до" disabled/>
-          {errors.firstName && touched.firstName ? (
-            <div>{errors.firstName}</div>
-          ) : null}
-          <button type="submit">Submit</button>
+          <button type="submit" className='submit-button'>Поднеси</button>
         </Form>
       )}
     </Formik>

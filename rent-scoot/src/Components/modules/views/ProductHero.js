@@ -5,7 +5,7 @@ import Button from '../components/Button';
 import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 import backgroundImage from '../../../Assets/images/homebg.jpg'
-
+import Link from 'react-router-dom/Link'
 
 const styles = theme => ({
   background: {
@@ -30,7 +30,6 @@ const styles = theme => ({
 
 function ProductHero(props) {
   const { classes } = props;
-
   return (
     <ProductHeroLayout backgroundClassName={classes.background}>
       {/* Increase the network loading priority of the background image. */}
@@ -46,8 +45,11 @@ function ProductHero(props) {
         variant="contained"
         size="large"
         className={classes.button}
-        component="a"
-        href="/premium-themes/onepirate/sign-up/"
+        onClick={ e => {
+          props.handleNav(1)
+        }}
+        component={Link}
+        to="/Rent"
       >
         Изнајми
       </Button>

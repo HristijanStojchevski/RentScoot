@@ -4,14 +4,17 @@ import Tab from '@material-ui/core/Tab';
 import Link from 'react-router-dom/Link';
 
 //import './Navbar.css';
-function Navbar () {
-
+function Navbar ({navValue}) {
+    
     const [value, setValue] = React.useState(0);
-
 const changeTabs= (event, newValue) => {
     setValue(newValue);
 };
-
+function setUpdate() {
+  setValue(navValue);
+}
+React.useEffect(() => { setUpdate(); },navValue);
+  
     return (
     <Paper>
     <Tabs 

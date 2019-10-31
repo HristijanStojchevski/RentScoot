@@ -3,14 +3,14 @@ import ReactMap,{Marker,Popup} from 'react-map-gl';
 import * as PointData from '../../Data/vehicle-locations.json';
 import {Button} from '@material-ui/core';
 import LocImg from '../../Assets/images/scooter-svgrepo-com (1).svg';
-
+import './Mapbox.css'
    
-export default function Map(){
+export default function Map({handleSelect}){
     const[viewport, setViewport] = useState({
         latitude: 41.994010,
         longitude: 21.435920,
-        width: '46.3vw',
-        height: '55vh',
+        width: '100%',
+        height: '60vh',
         zoom: 10
     });
     const styles = {
@@ -26,6 +26,13 @@ export default function Map(){
          mapStyle = "mapbox://styles/hristijansrm/ck2cwqhel0fta1co4nkwkadlz"
          onViewportChange ={(viewport)=>{setViewport(viewport);}}
          >
+         <div className='map-insturctions'>
+            <h3>Начин на користење на мапата</h3>
+            <p>
+                Притиснете на иконата за да ги видите локациите на подигнување 
+                на вашиот тротинет.
+            </p>
+         </div>
              {PointData.features.map((point)=>(
                  <Marker key={point.properties.Loc_ID}
                     latitude={point.properties.Coordinates[0]}  longitude={point.properties.Coordinates[1]}>
@@ -33,6 +40,7 @@ export default function Map(){
                         onClick = {e => {
                          e.preventDefault();
                          setSelectedPlace(point);
+                         handleSelect(point);
                      }}>
                      <img src={LocImg} style={{width:"3.2em",height:"3.2em"}} alt="Rental locations"></img>
                      </Button>

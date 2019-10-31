@@ -1,22 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
-import TextField from '../components/TextField';
-import Snackbar from '../components/Snackbar';
 import Button from '../components/Button';
 import image from '../../../Assets/images/image6.jpg'
 import './css/ProductCTA.css'
-
+import emailjs from 'emailjs-com'
 
 export default class ProductCTA extends React.Component {
-
+  //state.email
   saveEmail(event){
     event.preventDefault();
     alert('Успешна најава за промоции.');
+    const templateId = 'digit2019';
+        emailjs.init("user_MOSCUCzUTNRwgqfcKKeJb");
+        emailjs.send(
+          'gmail', templateId,
+          this.state //vo ovoj state treba da imas objekt so email 
+          ).then(res => {
+            console.log('Email successfully sent!')
+          })
+          // Handle errors here however you like, or use a React error boundary
+          .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
   };
 
 

@@ -12,6 +12,7 @@ import {
 } from '@material-ui/pickers';
 import FormFields from './Form';
 
+
 function Rent() {
   const style = {
     Paper: { padding: 20, margintTop: 10, marginBottom: 10 }
@@ -26,41 +27,26 @@ function Rent() {
   const handleDateEndChange = date=> {
     setSelectedEndDate(date);
   };
+  const [selectedPlace, setSelectedPlace] = useState(null);
+  const handleSelect = (selected) => {
+    setSelectedPlace(selected);
+    } 
 
   return (
     <Fragment>
       <Grid container direction="column" justify="space-around">
         <Grid item>
           <Grid container justify="space-around">
-            <Grid item xs>
-              <Paper style={style.Paper}>
-                <p>
-                Left pane <br />
-                List all locations
-                </p>
-              </Paper>
-            </Grid>
-            <Grid item sm={6}>
-              <Paper style={style.Paper}>
-                
-                <BoxMap />
-              </Paper>
-            </Grid>
-            <Grid item xs>
-              <Paper style={style.Paper}>
-                <p>Right pane <br />
-                List all vehicles<br />
-                Models <br />
-                BatteryLife<br />
-                KM Range</p>
-          </Paper>
+            <Grid item sm={12} style={{margin: '0 2em'}}>    
+                <BoxMap handleSelect = {handleSelect} />
             </Grid>
           </Grid>
         </Grid>
         <Grid item>
           <Grid container className="forma">
             <Grid item sm={10}>
-              <Paper>
+              <Paper className='reservation-form'>
+                <h2 className='legend'>РЕЗЕРВИРАЈ СЕГА!</h2>
               <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <Grid container justify="space-around">
         <KeyboardDatePicker
@@ -69,7 +55,7 @@ function Rent() {
           format="MM/dd/yyyy"
           margin="normal"
           id="date-picker-inline"
-          label="Date picker inline"
+          label="Датум на подигнување"
           value={selectedStartDate}
           onChange={handleDateStartChange}
           KeyboardButtonProps={{
@@ -79,7 +65,7 @@ function Rent() {
         <KeyboardTimePicker
           margin="normal"
           id="time-picker"
-          label="Time picker"
+          label="Време на подигнување"
           value={selectedStartDate}
           onChange={handleDateStartChange}
           KeyboardButtonProps={{
@@ -89,7 +75,7 @@ function Rent() {
         <KeyboardDatePicker
           margin="normal"
           id="date-picker-dialog"
-          label="Date picker dialog"
+          label="Датум на враќање"
           format="MM/dd/yyyy"
           value={selectedEndDate}
           onChange={handleDateEndChange}
@@ -100,7 +86,7 @@ function Rent() {
         <KeyboardTimePicker
           margin="normal"
           id="time-picker"
-          label="Time picker"
+          label="Време на враќање"
           value={selectedEndDate}
           onChange={handleDateEndChange}
           KeyboardButtonProps={{
@@ -109,9 +95,8 @@ function Rent() {
         />
       </Grid>
     </MuiPickersUtilsProvider>
-            <FormFields dateStart={selectedStartDate} dateEnd={selectedEndDate}/>
+            <FormFields dateStart={selectedStartDate} dateEnd={selectedEndDate} location={selectedPlace}/>
               </Paper>
-
             </Grid>
           </Grid>
         </Grid>
