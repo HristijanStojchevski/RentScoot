@@ -9,6 +9,7 @@ input[type=number]::-webkit-outer-spin-button{
 
 .reservation-form
 {
+	margin-top: 1em;
 	background-color: #d3e0e6 !important;
 }
 

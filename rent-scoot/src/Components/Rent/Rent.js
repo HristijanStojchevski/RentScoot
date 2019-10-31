@@ -33,28 +33,8 @@ function Rent() {
       <Grid container direction="column" justify="space-around">
         <Grid item>
           <Grid container justify="space-around">
-            <Grid item xs>
-              <Paper style={style.Paper}>
-                <p>
-                Left pane <br />
-                List all locations
-                </p>
-              </Paper>
-            </Grid>
-            <Grid item sm={6}>
-              <Paper style={style.Paper}>
-                
+            <Grid item sm={12} style={{margin: '0 2em'}}>    
                 <BoxMap />
-              </Paper>
-            </Grid>
-            <Grid item xs>
-              <Paper style={style.Paper}>
-                <p>Right pane <br />
-                List all vehicles<br />
-                Models <br />
-                BatteryLife<br />
-                KM Range</p>
-          </Paper>
             </Grid>
           </Grid>
         </Grid>
