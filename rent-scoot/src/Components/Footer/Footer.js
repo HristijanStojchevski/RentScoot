@@ -10,14 +10,14 @@ function Footer() {
 	<footer className='footer'>
 		<Grid container style={{padding: '1em 4em'}}>
 	        <Grid item xs={6} className='footer-image'>
-	          	<img src={logo} />
+	          	<img src={logo} alt=" "/>
 	        </Grid>		
 	        <Grid item xs={2} className='footer-item'>
 	          	<i className="fas fa-map-marker-alt"></i> 
 	          	Џон Кенеди 19а, Скопје 1000, Македонија
 	        </Grid>
 	        <Grid item xs={2} className='footer-item'>
-	          	<i className="fas fa-envelope"></i>
+	          	<i className='fas fa-envelope'></i>
 	          	info@rentscoot.com
 	        </Grid>
 	        <Grid item xs={2} className='footer-item'>
