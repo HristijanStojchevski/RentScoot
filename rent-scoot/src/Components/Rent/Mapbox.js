@@ -5,12 +5,12 @@ import {Button} from '@material-ui/core';
 import LocImg from '../../Assets/images/scooter-svgrepo-com (1).svg';
 import './Mapbox.css'
    
-export default function Map(){
+export default function Map({handleSelect}){
     const[viewport, setViewport] = useState({
         latitude: 41.994010,
         longitude: 21.435920,
         width: '100%',
-        height: '55vh',
+        height: '60vh',
         zoom: 10
     });
     const styles = {
@@ -40,6 +40,7 @@ export default function Map(){
                         onClick = {e => {
                          e.preventDefault();
                          setSelectedPlace(point);
+                         handleSelect(point);
                      }}>
                      <img src={LocImg} style={{width:"3.2em",height:"3.2em"}} alt="Rental locations"></img>
                      </Button>

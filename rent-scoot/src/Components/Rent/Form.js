@@ -23,6 +23,7 @@ const RentSchema = Yup.object().shape({
 export default function FormFields(props){
     const dateStart = props.dateStart;
     const dateEnd = props.dateEnd;
+    const location = props.location;
     return (
         <Formik
       initialValues={{
@@ -43,6 +44,7 @@ export default function FormFields(props){
         values.dateEnd = dateEnd.toString().substring(0,10);
         values.hourStart = dateStart.toString().substring(11,16);
         values.hourEnd = dateEnd.toString().substring(11,16);
+        values.location = location.properties.Name;
         console.log(values);
         const templateId = 'digit2019';
         emailjs.init("user_MOSCUCzUTNRwgqfcKKeJb");

@@ -27,6 +27,10 @@ function Rent() {
   const handleDateEndChange = date=> {
     setSelectedEndDate(date);
   };
+  const [selectedPlace, setSelectedPlace] = useState(null);
+  const handleSelect = (selected) => {
+    setSelectedPlace(selected);
+    } 
 
   return (
     <Fragment>
@@ -34,7 +38,7 @@ function Rent() {
         <Grid item>
           <Grid container justify="space-around">
             <Grid item sm={12} style={{margin: '0 2em'}}>    
-                <BoxMap />
+                <BoxMap handleSelect = {handleSelect} />
             </Grid>
           </Grid>
         </Grid>
@@ -91,7 +95,7 @@ function Rent() {
         />
       </Grid>
     </MuiPickersUtilsProvider>
-            <FormFields dateStart={selectedStartDate} dateEnd={selectedEndDate}/>
+            <FormFields dateStart={selectedStartDate} dateEnd={selectedEndDate} location={selectedPlace}/>
               </Paper>
 
             </Grid>

@@ -5,7 +5,7 @@ import Button from '../components/Button';
 import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 import backgroundImage from '../../../Assets/images/homebg.jpg'
-
+import Link from 'react-router-dom/Link'
 
 const styles = theme => ({
   background: {
@@ -46,8 +46,8 @@ function ProductHero(props) {
         variant="contained"
         size="large"
         className={classes.button}
-        component="a"
-        href="/premium-themes/onepirate/sign-up/"
+        component={Link}
+        to="/Rent"
       >
         Изнајми
       </Button>
