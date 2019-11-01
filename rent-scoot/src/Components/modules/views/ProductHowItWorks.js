@@ -38,7 +38,8 @@ const styles = theme => ({
     fontWeight: theme.typography.fontWeightMedium,
   },
   image: {
-    height: 155,
+    width: '100%',
+    height: 250,
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(4),
   },
@@ -60,7 +61,6 @@ function ProductHowItWorks(props) {
     <section className={classes.root}>
       <Container className={classes.container}>
         <img
-          src="/static/themes/onepirate/productCurvyLines.png"
           className={classes.curvyLines}
           alt="curvy lines"
         />
@@ -71,11 +71,7 @@ function ProductHowItWorks(props) {
           <Grid container spacing={5}>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                <img
-                  src=""
-                  alt="suitcase"
-                  className={classes.image}
-                />
+
                 <Typography variant="h5" align="center">
                   <p>Xiaomi M365</p>
                   <ul>
@@ -94,11 +90,6 @@ function ProductHowItWorks(props) {
             </Grid>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                <img
-                  src="/static/themes/onepirate/productHowItWorks2.svg"
-                  alt="graph"
-                  className={classes.image}
-                />
                 <Typography variant="h5" align="center">
                   <p>Power Core E100</p>
                   <ul>
@@ -117,11 +108,6 @@ function ProductHowItWorks(props) {
             </Grid>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                <img
-                  src="/static/themes/onepirate/productHowItWorks3.svg"
-                  alt="clock"
-                  className={classes.image}
-                />
                 <Typography variant="h5" align="center">
                   <p>Power Core E300</p>
                   <ul>

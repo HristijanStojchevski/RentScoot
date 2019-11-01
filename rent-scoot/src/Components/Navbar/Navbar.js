@@ -19,9 +19,6 @@ React.useEffect(() => { setUpdate(); },navValue);
     <Paper>
     <Tabs 
     value={value}
-    onChange = { changeTabs }
-    indicatorColor="primary"
-    textColor="primary" 
     centered
     >
     
