@@ -9,11 +9,13 @@ function Navbar ({navValue}) {
     const [value, setValue] = React.useState(0);
 const changeTabs= (event, newValue) => {
     setValue(newValue);
+    //navValue=0;
+    //console.log(navValue);
 };
 function setUpdate() {
-  setValue(navValue);
+  setValue(1);
 }
-React.useEffect(() => { setUpdate(); },navValue);
+React.useEffect(() => { setUpdate(); },[navValue]);
   
     return (
     <Paper>

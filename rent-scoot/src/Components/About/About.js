@@ -2,8 +2,7 @@ import React from 'react';
 import './About.css';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import Image5 from '../../Assets/images/image5.jpg'; // with import
-import Link from 'react-router-dom/Link';
+import Image5 from '../../Assets/images/image5.jpg';
 
 
 function About() {

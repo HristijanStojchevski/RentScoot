@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import logo from '../../Assets/images/logo.png'
  

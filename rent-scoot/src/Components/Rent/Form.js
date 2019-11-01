@@ -3,6 +3,7 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import emailjs from 'emailjs-com'
 import './Form.css'
+//import * as PointData from '../../Data/vehicle-locations.json';
 
 const RentSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -74,6 +75,12 @@ export default function FormFields(props){
           {errors.phone && touched.phone ? (
             <span className='validator'>{errors.phone}</span>
           ) : null}
+          {/*<select name="location" id="locationDropdown" className='form-field' >
+            <option value="Железничка" selected onClick={() => {location =PointData.features[0]}}> Железничка</option>
+            <option value="City Mall" onCLick={() => {location =PointData.features[1]}}>City Mall</option>
+            <option value="Градски плоштад" onClick={() => {location =PointData.features[2]}}>Градски плоштад</option>
+            <option value="Capitol Mall" onClick={() => {location =PointData.features[3]}}>Capitol Mall</option>
+          </select>*/}
           <button type="submit" className='submit-button'>Поднеси</button>
         </Form>
       )}

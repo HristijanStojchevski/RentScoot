@@ -11,12 +11,11 @@ import {
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 import FormFields from './Form';
+import * as PointData from '../../Data/vehicle-locations.json';
 
 
 function Rent() {
-  const style = {
-    Paper: { padding: 20, margintTop: 10, marginBottom: 10 }
-  }
+  
   const [selectedStartDate, setSelectedStartDate] = useState(new Date().toISOString());
   
   const handleDateStartChange = date=> {
@@ -27,7 +26,7 @@ function Rent() {
   const handleDateEndChange = date=> {
     setSelectedEndDate(date);
   };
-  const [selectedPlace, setSelectedPlace] = useState(null);
+  const [selectedPlace, setSelectedPlace] = useState(PointData.features[0]);
   const handleSelect = (selected) => {
     setSelectedPlace(selected);
     } 

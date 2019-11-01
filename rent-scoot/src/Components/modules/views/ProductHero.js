@@ -30,6 +30,7 @@ const styles = theme => ({
 
 function ProductHero(props) {
   const { classes } = props;
+  const counter =0;
   return (
     <ProductHeroLayout backgroundClassName={classes.background}>
       {/* Increase the network loading priority of the background image. */}
@@ -38,7 +39,7 @@ function ProductHero(props) {
         Бидете одговорни, Возете еко возила
       </Typography>
       <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
-        Enjoy secret offers up to -70% off the best luxury hotels every Sunday.
+      Со секое изнајмено возило отстранувате автомобил од улиците на вашиот град.
       </Typography>
       <Button
         color="secondary"
@@ -46,7 +47,7 @@ function ProductHero(props) {
         size="large"
         className={classes.button}
         onClick={ e => {
-          props.handleNav(1)
+          props.handleNav(counter);
         }}
         component={Link}
         to="/Rent"

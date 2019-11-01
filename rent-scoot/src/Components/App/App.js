@@ -4,14 +4,15 @@ import Home from '../Home/Home';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Rent from '../Rent/Rent';
-import {BrowserRouter as Router, Switch, Route,Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 
 function App() {
   const [selectedNav, setSelectedNav] = useState(0);
   const handleNavHome = (selected) => {
-    setSelectedNav(selected);
+    const temp = selectedNav +1;
+    setSelectedNav(temp);
     //console.log(selectedNav);
     } 
   return (
