@@ -29,8 +29,7 @@ export default function Map({handleSelect}){
          <div className='map-insturctions'>
             <h3>Начин на користење на мапата</h3>
             <p>
-                Притиснете на иконата за да ги видите локациите на подигнување 
-                на вашиот тротинет.
+                За повеќе детали, притиснете на локациите, каде ве чека голем избор на тротинети.
             </p>
          </div>
              {PointData.features.map((point)=>(

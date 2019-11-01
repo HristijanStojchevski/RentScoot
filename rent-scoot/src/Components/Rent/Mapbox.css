@@ -3,11 +3,17 @@
     box-shadow: 4px 5px 10px rgba(0,0,0);
     float: left;
     background-color: rgba(0,0,0,0.7);
-    height: 60%;
-    width: 30%;
+    height: 35vh;
+    width: 20vw;
     position: absolute;
-    top: 50%; left: 50%;
+    top: 22vh; left: 35vw;
     transform: translate(-160%,-50%);
     float: left !important;
     color: white;
+}
+.map-insturctions p{
+    font-size: 1.4vw;
+}
+.map-insturctions h3{
+    font-size: 1.7vw;
 }
