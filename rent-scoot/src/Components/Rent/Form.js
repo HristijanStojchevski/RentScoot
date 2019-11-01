@@ -3,7 +3,17 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import emailjs from 'emailjs-com'
 import './Form.css'
-//import * as PointData from '../../Data/vehicle-locations.json';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const RentSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -25,6 +35,16 @@ export default function FormFields(props){
     const dateStart = props.dateStart;
     const dateEnd = props.dateEnd;
     const location = props.location;
+    const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
     return (
         <Formik
       initialValues={{
@@ -81,9 +101,29 @@ export default function FormFields(props){
             <option value="Градски плоштад" onClick={() => {location =PointData.features[2]}}>Градски плоштад</option>
             <option value="Capitol Mall" onClick={() => {location =PointData.features[3]}}>Capitol Mall</option>
           </select>*/}
-          <button type="submit" className='submit-button'>Поднеси</button>
+          <button type="submit" className='submit-button' onClick={handleClickOpen}>Поднеси</button>
         </Form>
-      )}
+      )}   
+      <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+        >
+        <DialogTitle id="alert-dialog-slide-title">{"Use Google's location service?"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            Вашата нарачка беше успешна! Набрзо ќе добиете повеќе информации на вашата електронска пошта.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Во ред
+          </Button>
+        </DialogActions>
+      </Dialog>  
     </Formik>
     );
 }

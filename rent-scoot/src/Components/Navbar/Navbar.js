@@ -25,7 +25,7 @@ React.useEffect(() => { setUpdate(); },[navValue]);
     <Paper style={{backgroundColor: '#3a4aa3'}}>
     <Grid container>
         <Grid item sm={2}>
-            <img className="nav-logo" src={Logo}/>
+            <img className="nav-logo" src={Logo} alt=" "/>
         </Grid>
         <Grid item sm={8}>
             <Tabs 
