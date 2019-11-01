@@ -38,7 +38,7 @@ const styles = theme => ({
     fontWeight: theme.typography.fontWeightMedium,
   },
   image: {
-    height: 155,
+    height: 255,
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(4),
   },
@@ -60,7 +60,7 @@ function ProductHowItWorks(props) {
     <section className={classes.root}>
       <Container className={classes.container}>
         <img
-          src="/static/themes/onepirate/productCurvyLines.png"
+          src=""
           className={classes.curvyLines}
           alt="curvy lines"
         />
@@ -72,7 +72,7 @@ function ProductHowItWorks(props) {
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
                 <img
-                  src=""
+                  src="https://cdn.shopify.com/s/files/1/0063/2714/0425/products/left-side-folded-v2_750x.progressive.jpg?v=1572005937"
                   alt="suitcase"
                   className={classes.image}
                 />
@@ -95,7 +95,7 @@ function ProductHowItWorks(props) {
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
                 <img
-                  src="/static/themes/onepirate/productHowItWorks2.svg"
+                  src="https://i5.walmartimages.com/asr/83047767-e785-4f29-8177-4a722076a837_1.1b231aed5d16cb0bb2a9943a543684cd.jpeg?odnWidth=450&odnHeight=450&odnBg=ffffff"
                   alt="graph"
                   className={classes.image}
                 />
@@ -118,7 +118,7 @@ function ProductHowItWorks(props) {
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
                 <img
-                  src="/static/themes/onepirate/productHowItWorks3.svg"
+                  src="https://cdn.shopify.com/s/files/1/0014/0371/5678/products/LS7_-1_1000x.png?v=1567102884"
                   alt="clock"
                   className={classes.image}
                 />
