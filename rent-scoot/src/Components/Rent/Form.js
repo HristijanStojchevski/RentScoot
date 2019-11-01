@@ -46,6 +46,7 @@ export default function FormFields(props){
   };
 
     return (
+      <div>
         <Formik
       initialValues={{
         firstName: '',
@@ -103,8 +104,9 @@ export default function FormFields(props){
           </select>*/}
           <button type="submit" className='submit-button' onClick={handleClickOpen}>Поднеси</button>
         </Form>
-      )}   
-      <Dialog
+      )}    
+    </Formik>
+          <Dialog
         open={open}
         TransitionComponent={Transition}
         keepMounted
@@ -112,10 +114,10 @@ export default function FormFields(props){
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description"
         >
-        <DialogTitle id="alert-dialog-slide-title">{"Use Google's location service?"}</DialogTitle>
+        <DialogTitle id="alert-dialog-slide-title">{"Вашата нарачка беше успешна! "}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            Вашата нарачка беше успешна! Набрзо ќе добиете повеќе информации на вашата електронска пошта.
+           Набрзо ќе добиете повеќе информации на вашата електронска пошта.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -123,7 +125,7 @@ export default function FormFields(props){
             Во ред
           </Button>
         </DialogActions>
-      </Dialog>  
-    </Formik>
+      </Dialog> 
+    </div>
     );
 }
