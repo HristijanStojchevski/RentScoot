@@ -9,22 +9,38 @@ import './css/ProductCTA.css'
 import emailjs from 'emailjs-com'
 
 export default class ProductCTA extends React.Component {
-  //state.email
-  saveEmail(event){
-    event.preventDefault();
-    alert('Успешна најава за промоции.');
-    const templateId = 'digit2019';
-        emailjs.init("user_MOSCUCzUTNRwgqfcKKeJb");
-        emailjs.send(
-          'gmail', templateId,
-          this.state //vo ovoj state treba da imas objekt so email 
-          ).then(res => {
-            console.log('Email successfully sent!')
-          })
-          // Handle errors here however you like, or use a React error boundary
-          .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
-  };
 
+
+  state = {
+    email: '',
+  }
+  handleSubmit(e) {
+      e.preventDefault()
+      const { email } = this.state
+      let templateParams = {
+        email: email,
+       }
+       emailjs.send(
+        'gmail',
+        'template_ii0Roqxo',
+         templateParams,
+        'user_MOSCUCzUTNRwgqfcKKeJb'
+       )
+       this.resetForm()
+   }
+
+  resetForm() {
+      this.setState({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      })
+    }
+
+  handleChange = (param, e) => {
+      this.setState({ [param]: e.target.value })
+    }
 
   render(){
     return (
@@ -32,11 +48,11 @@ export default class ProductCTA extends React.Component {
         <Grid container m={2}>
           <Grid item xs={6} md={6} className="left-grid">
             <div>
-              <form onSubmit={this.saveEmail}>
+              <form onSubmit={this.handleSubmit.bind(this)}>
                 <Typography variant="h4" component="h4" gutterBottom>
                   Најавете се за промоции
                 </Typography>
-                <input type="email" required placeholder="вашиот мејл" className="mail-class"/>
+                <input type="email" onChange={this.handleChange.bind(this, 'email')} value={this.state.email} required placeholder="вашиот мејл" className="mail-class"/>
                 <Button type="submit" color="primary" variant="contained">
                   Зачувај
                 </Button>
@@ -60,7 +76,7 @@ export default class ProductCTA extends React.Component {
                 <Typography variant="h4" component="h4" gutterBottom>
                   Најавете се за промоции
                 </Typography>
-                <input type="email" required placeholder="вашиот мејл" className="mail-class"/>
+                <input type="email" required placeholder="вашиот мејл" value={this.email} className="mail-class"/>
                 <Button type="submit" color="primary" variant="contained">
                   Зачувај
                 </Button>

@@ -16,9 +16,6 @@ const changeTabs= (event, newValue) => {
     <Paper>
     <Tabs 
     value={value}
-    onChange = { changeTabs }
-    indicatorColor="primary"
-    textColor="primary" 
     centered
     >
     
