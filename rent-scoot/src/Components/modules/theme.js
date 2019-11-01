@@ -9,13 +9,13 @@ const rawTheme = createMuiTheme({
       dark: '#1e1e1f',
     },
     secondary: {
-      light: '#fff5f8',
+      light: '#ffffff',
       main: '#3a4aa3',
       dark: '#292ae6',
     },
     warning: {
-      main: '#ffc071',
-      dark: '#ffb25e',
+      main: '#ffffff',
+      dark: '#ffffff',
     },
     error: {
       xLight: red[50],

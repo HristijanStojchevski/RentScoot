@@ -2,6 +2,10 @@ import React from 'react';
 import {Paper,Tabs} from '@material-ui/core';
 import Tab from '@material-ui/core/Tab';  
 import Link from 'react-router-dom/Link';
+import Logo from '../../Assets/images/logo.png'
+import './Navbar.css';
+import Grid from '@material-ui/core/Grid';
+
 
 //import './Navbar.css';
 function Navbar ({navValue}) {
@@ -18,19 +22,28 @@ function setUpdate() {
 React.useEffect(() => { setUpdate(); },[navValue]);
   
     return (
-    <Paper>
-    <Tabs 
-    value={value}
-    onChange = { changeTabs }
-    indicatorColor="primary"
-    textColor="primary" 
-    centered
-    >
-    
-    <Tab label="Почетна" component={Link} to="/"/>
-    <Tab label="Изнајми" component={Link} to="/Rent"/>
-    <Tab label="За нас" component={Link} to="/About"/>
-    </Tabs>
+    <Paper style={{backgroundColor: '#3a4aa3'}}>
+    <Grid container>
+        <Grid item sm={2}>
+            <img className="nav-logo" src={Logo}/>
+        </Grid>
+        <Grid item sm={8}>
+            <Tabs 
+                value={value}
+                onChange = { changeTabs }
+                indicatorColor="warning"
+                textColor="primary" 
+                centered
+                >
+
+            <Tab label="Почетна" component={Link} to="/"/>
+            <Tab label="Изнајми" component={Link} to="/Rent"/>
+            <Tab label="За нас" component={Link} to="/About"/>
+            </Tabs>
+        </Grid>
+        <Grid item sm={2}>
+        </Grid>
+    </Grid>
     </Paper>
   );
 }

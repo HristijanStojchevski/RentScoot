@@ -36,7 +36,7 @@ function Rent() {
       <Grid container direction="column" justify="space-around">
         <Grid item>
           <Grid container justify="space-around">
-            <Grid item sm={12} style={{margin: '0 2em'}}>    
+            <Grid item sm={12} style={{margin: '0 2em !important'}}>    
                 <BoxMap handleSelect = {handleSelect} />
             </Grid>
           </Grid>

@@ -11,3 +11,7 @@
 	color: white !important;
 	background-color: #292ae6;
 }
+.MuiContainer-root{
+	background-image: url(../../../Assets/images/imagebg.jpg);
+	background-position: cover;
+}

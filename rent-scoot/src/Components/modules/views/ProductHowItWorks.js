@@ -123,16 +123,16 @@ function ProductHowItWorks(props) {
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  <p>Power Core E300</p>
+                  <p>NANROBOT LS7</p>
                   <ul>
                     <li>
-                      Максимална брзина:25км/ч
+                      Максимална брзина:85км/ч
                     </li>
                     <li>
-                      Растојание со полна батерија: 18 км
+                      Растојание со полна батерија: 90 км
                     </li>
                     <li>
-                      Максимална дозволена носивост: 100 кг
+                      Максимална дозволена носивост: 150 кг
                     </li>
                   </ul>
                 </Typography>

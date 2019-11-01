@@ -10,7 +10,7 @@ export default function Map({handleSelect}){
         latitude: 41.994010,
         longitude: 21.435920,
         width: '100%',
-        height: '60vh',
+        height: '80vh',
         zoom: 10
     });
     const styles = {
@@ -20,7 +20,7 @@ export default function Map({handleSelect}){
     const[selectedPlace, setSelectedPlace] = useState(null);
 
     
-    return (<div>
+    return (<div style={{margin: '1em 2em'}}>
         <ReactMap {...viewport}
          mapboxApiAccessToken="pk.eyJ1IjoiaHJpc3RpamFuc3JtIiwiYSI6ImNrMmNmdGhnejA0aXgzYm8wbXlzcGdjcXcifQ.u48U8MvhK5IPyoiyci6jXw"
          mapStyle = "mapbox://styles/hristijansrm/ck2cwqhel0fta1co4nkwkadlz"

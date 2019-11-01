@@ -1,6 +1,6 @@
 .header-background
 {
-	background: linear-gradient(90deg,rgba(0,0,0,0.75),rgba(255, 171, 69, .85)),
+	background: linear-gradient(90deg,rgba(0,0,0,0.75),rgba(58, 74, 163, 0.3)),
 	url('../../Assets/images/image5.jpg');
 	background-position: bottom;
 	background-repeat: none;
@@ -26,7 +26,7 @@
 {   
 	color: #383836;
 	font-style: sans-serif;
-	border-bottom: 2px solid rgba(255, 171, 69, .85);
+	border-bottom: 2px solid rgba(255, 0, 0, .65);
 	padding-bottom: 10px;
 	text-align: left;
 	margin: 0;

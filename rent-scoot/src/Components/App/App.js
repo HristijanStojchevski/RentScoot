@@ -8,6 +8,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 
+
 function App() {
   const [selectedNav, setSelectedNav] = useState(0);
   const handleNavHome = (selected) => {
