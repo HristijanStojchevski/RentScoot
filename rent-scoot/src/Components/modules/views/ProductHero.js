@@ -30,7 +30,7 @@ const styles = theme => ({
 
 function ProductHero(props) {
   const { classes } = props;
-  const counter =0;
+  const counter =1;
   return (
     <ProductHeroLayout backgroundClassName={classes.background}>
       {/* Increase the network loading priority of the background image. */}

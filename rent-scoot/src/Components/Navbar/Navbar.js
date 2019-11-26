@@ -1,23 +1,30 @@
 import React from 'react';
 import {Paper,Tabs} from '@material-ui/core';
 import Tab from '@material-ui/core/Tab';  
-import Link from 'react-router-dom/Link';
+import {Link} from "react-router-dom";
 import Logo from '../../Assets/images/logo.png'
 import './Navbar.css';
 import Grid from '@material-ui/core/Grid';
 
-
 //import './Navbar.css';
 function Navbar ({navValue}) {
-    
+    const [init,setInit] = React.useState(true);
     const [value, setValue] = React.useState(0);
 const changeTabs= (event, newValue) => {
     setValue(newValue);
-    //navValue=0;
-    //console.log(navValue);
 };
 function setUpdate() {
-  setValue(1);
+    if(!init){
+    setValue(1);
+    }
+    else {
+        //read path and set nav value
+        const pathName = window.location.pathname;
+        if(pathName.localeCompare("/")===0){setValue(0);}
+        if(pathName.localeCompare("/Rent")===0){setValue(1);}
+        if(pathName.localeCompare("/About")===0){setValue(2);}
+        setInit(false);
+    }
 }
 React.useEffect(() => { setUpdate(); },[navValue]);
   

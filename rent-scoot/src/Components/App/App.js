@@ -12,8 +12,7 @@ import Footer from '../Footer/Footer';
 function App() {
   const [selectedNav, setSelectedNav] = useState(0);
   const handleNavHome = (selected) => {
-    const temp = selectedNav +1;
-    setSelectedNav(temp);
+    setSelectedNav(selected);
     //console.log(selectedNav);
     } 
   return (
